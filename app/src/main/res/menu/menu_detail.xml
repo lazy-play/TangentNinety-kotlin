@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/share"
+        android:icon="@drawable/ic_share"
+        android:title="@string/share"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/collection"
+        android:checkable="true"
+        android:checked="true"
+        android:icon="@drawable/ic_collection_empty"
+        android:title="@string/collection"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/comments"
+        android:icon="@drawable/ic_comments"
+        android:title="@string/comments_num"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/good"
+        android:icon="@drawable/ic_good"
+        android:title="@string/good_num"
+        app:showAsAction="always" />
+
+</menu>

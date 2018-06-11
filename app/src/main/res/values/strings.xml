@@ -1,0 +1,48 @@
+<resources xmlns:format="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_name">不存在日报</string>
+    <string name="app_info">用心做界面，用脚做程序。</string>
+    <string name="first_egg">不存在彩蛋</string>
+    <string name="first_egg_info">都说了没彩蛋了。</string>
+    <string name="second_egg_info">屏幕都戳破了。</string>
+    <string name="third_egg">还存在彩蛋</string>
+    <string name="third_egg_info">你是真的闲，算你赢了。</string>
+    <string name="author_info">作者：晓尐仆町\n版本：V<format:g id="VERSION_NAME">%s</format:g>\n简介：\n这个人很懒，什么都没有写。</string>
+
+    <string name="navigation_drawer_open">打开侧边栏</string>
+    <string name="navigation_drawer_close">关闭侧边栏</string>
+
+    <string name="action_home">首页</string>
+    <string name="action_section">专题</string>
+    <string name="action_collection">我的收藏</string>
+    <string name="action_history">浏览历史</string>
+    <string name="action_setting">设置</string>
+    <string name="action_download">离线下载</string>
+    <string name="action_change_theme">日夜切换</string>
+    <string name="action_about_me">关于</string>
+    <string name="share">分享</string>
+    <string name="collection">收藏</string>
+    <string name="comments_num">评论数</string>
+    <string name="good_num">点赞数</string>
+    <string name="save_image">保存图片</string>
+    <string name="change_background">切换背景</string>
+    <string name="edit">编辑</string>
+    <string name="delete">删除</string>
+    <string name="expand">展开内容∨</string>
+    <string name="collapse">收起内容∧</string>
+    <string name="double_exit">再按一次退出程序</string>
+    <string name="already_new">已经是最新的了</string>
+    <string name="daily_hot">今日热门</string>
+
+    <string name="image_save_failed">保存失败，用户没有授予磁盘读写权限,请到设置界面手动开启权限。</string>
+
+    <string name="download_failed">离线下载失败</string>
+    <string name="download_success">离线下载成功</string>
+    <string name="sure">确定</string>
+    <string name="cancel">取消</string>
+    <string name="choose_delete">请选择要删除的记录</string>
+    <string name="more_than_1000">999+</string>
+
+    <item type="id" name="image_request"/>
+    <item type="id" name="image_url"/>
+</resources>

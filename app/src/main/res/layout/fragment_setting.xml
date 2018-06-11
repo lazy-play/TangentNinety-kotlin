@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary">
+
+        <android.support.v7.widget.Toolbar
+
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </android.support.design.widget.AppBarLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_normal"
+                style="@style/Settings_Header"
+                android:text="常规" />
+
+            <LinearLayout
+                android:id="@+id/download"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="16dp">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/download_title"
+                        style="@style/Settings_Item_Text"
+                        android:text="自动离线下载" />
+
+                    <TextView
+                        android:id="@+id/download_subtitle"
+                        style="@style/Settings_Item_SubText"
+                        android:layout_below="@+id/download_title"
+                        android:text="Wifi环境下自动下载最新内容" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <CheckBox
+                        android:id="@+id/download_check"
+                        style="@style/Settings_Item_CheckBox"
+                        android:buttonTint="?attr/colorNavigation"
+                        android:buttonTintMode="src_in"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/Settings_Item_Divider" />
+
+            <LinearLayout
+                android:id="@+id/nopic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="16dp">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/nopic_title"
+                        style="@style/Settings_Item_Text"
+                        android:text="无图模式" />
+
+                    <TextView
+                        android:id="@+id/nopic_subtitle"
+                        style="@style/Settings_Item_SubText"
+                        android:layout_below="@+id/nopic_title"
+                        android:text="移动网络下,不主动下载图片" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <CheckBox
+                        android:id="@+id/nopic_check"
+                        style="@style/Settings_Item_CheckBox"
+                        android:buttonTint="?attr/colorNavigation"
+                        android:buttonTintMode="src_in"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/Settings_Item_Divider" />
+
+            <LinearLayout
+                android:id="@+id/big_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="16dp">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/big_font_title"
+                        style="@style/Settings_Item_Text"
+                        android:text="大字号" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <CheckBox
+                        android:id="@+id/big_font_check"
+                        style="@style/Settings_Item_CheckBox"
+                        android:buttonTint="?attr/colorNavigation"
+                        android:buttonTintMode="src_in"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/title_other"
+                style="@style/Settings_Header"
+                android:text="其他" />
+
+
+            <RelativeLayout
+                android:background="?android:attr/selectableItemBackground"
+                android:id="@+id/clear_cache"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/clear_cache_title"
+                    style="@style/Settings_Item_Text"
+                    android:text="清除缓存" />
+
+                <TextView
+                    android:id="@+id/clear_cache_subtitle"
+                    style="@style/Settings_Item_SubText"
+                    android:layout_below="@+id/clear_cache_title"
+                    android:text="0 k" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
