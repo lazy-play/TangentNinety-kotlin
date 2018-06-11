@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/logo_path_stroke" >
+    <target
+        android:name= "part_one"
+        android:animation="@anim/path_set" />
+    <target
+        android:name= "part_two"
+        android:animation="@anim/path_set" />
+    <target
+        android:name= "part_three"
+        android:animation="@anim/path_set" />
+</animated-vector >

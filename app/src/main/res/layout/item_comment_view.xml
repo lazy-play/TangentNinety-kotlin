@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="3dp"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_toEndOf="@id/user_icon"
+            android:gravity="center_vertical"
+            android:text="名字"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_below="@id/user_name"
+            android:layout_toEndOf="@id/user_icon"
+            android:gravity="center_vertical"
+            android:text="时间" />
+
+        <TextView
+            android:id="@+id/good_num"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="12"
+            android:textColor="@color/centerGrayColor" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="4dp"
+            android:layout_toStartOf="@id/good_num"
+            android:src="@drawable/ic_good"
+            android:tint="@color/centerGrayColor"
+            android:tintMode="src_in" />
+    </RelativeLayout>
+
+    <com.pudding.tangentninety.weight.ExpandableTextView
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        app:animDuration="400"
+        app:collapseExpandGrarity="center"
+        app:collapseExpandTextColor="?attr/colorMenuTitle"
+        app:contentTextColor="?attr/colorTextTitle"
+        app:contentTextSize="16dp"
+        app:maxCollapsedLines="5" />
+
+    <com.pudding.tangentninety.weight.ExpandableTextView
+        android:id="@+id/reply_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/listDividerColor"
+        android:padding="8dp"
+        android:textSize="16dp"
+        app:animDuration="400"
+        app:collapseExpandGrarity="center"
+        app:collapseExpandTextColor="?attr/colorMenuTitle"
+        app:contentTextColor="?attr/colorTextTitle"
+        app:contentTextSize="16dp"
+        app:maxCollapsedLines="3" />
+
+</LinearLayout>

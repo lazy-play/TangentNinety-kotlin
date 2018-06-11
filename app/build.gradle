@@ -1,0 +1,198 @@
+apply plugin: 'com.android.application'
+apply plugin: 'AndResGuard'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+kapt {
+    mapDiagnosticLocations = true
+    generateStubs = true
+}
+android {
+    compileSdkVersion 28//"android-P"
+    def currentVersionCode= getVersionCode()
+    def currentVersionName= getVersionName()
+    defaultConfig {
+        applicationId "com.pudding.tangentninety"
+        buildToolsVersion '28.0.0-rc2'
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode currentVersionCode
+        versionName "$currentVersionName.$versionCode"
+        resConfigs "zh"
+        ndk {
+            abiFilters "armeabi-v7a"
+//            ,"x86"
+        }
+    }
+    signingConfigs {
+        Properties props = new Properties()
+        props.load(new FileInputStream(project.rootProject.file("local.properties")))
+        release {
+            storeFile file(props['STORE_FILE'])//签名文件路径
+            storePassword props['KEYSTORE_PASSWORD']
+            keyAlias props['KEY_ALIAS']
+            keyPassword props['KEY_PASSWORD'] //签名密码
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+    buildTypes {
+        debug {
+            //是否混淆
+            minifyEnabled false
+            //是否移除无用资源
+//            shrinkResources true
+//            zipAlignEnabled true
+
+            //混淆的配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+                    def apk = outputFileName
+                    if (apk != null && apk.endsWith('.apk')) {
+                        outputFileName = "TangentNinety_v${defaultConfig.versionName}_DEBUG.apk"
+                    }
+                }
+            }
+        }
+        release {
+            //是否混淆
+            minifyEnabled true
+            //是否移除无用资源
+            shrinkResources true
+            zipAlignEnabled true
+
+            signingConfig signingConfigs.release
+            //混淆的配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+                    def apk = outputFileName
+                    if (apk != null && apk.endsWith('.apk')) {
+                        outputFileName = "TangentNinety_v${defaultConfig.versionName}_REL.apk"
+                    }
+                }
+            }
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    productFlavors {
+    }
+}
+andResGuard {
+    mappingFile = null
+//    use7zip = true
+    useSign = true
+    // 打开这个开关，会keep住所有资源的原始路径，只混淆资源的名字
+    keepRoot = false
+//    compressFilePattern = [
+//            "*.png",
+//            "*.jpg",
+//            "*.jpeg",
+//            "*.gif",
+//    ]
+    sevenzip {
+        artifact = 'com.tencent.mm:SevenZip:1.2.13'
+    }
+    finalApkBackupPath = "${project.rootDir}/apk/TangentNinety_${android.defaultConfig.versionName}_${releaseTime()}.apk"
+
+    digestalg = "SHA-256"
+}
+
+def dependVersion = [
+        support    : "28.0.0-alpha3",
+        retrofit   : "2.3.0",
+        okhttp     : "3.10.0",
+        dagger2    : "2.14.1",
+        butterknife: "8.8.1"
+]
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    //noinspection GradleCompatible
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    androidTestImplementation "com.android.support:support-annotations:${dependVersion.support}"
+
+    //base
+    implementation "com.android.support:design:${dependVersion.support}"
+    implementation "com.android.support:recyclerview-v7:${dependVersion.support}"
+    implementation "com.android.support:cardview-v7:${dependVersion.support}"
+
+    //ui
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.35'
+    implementation 'com.youth.banner:banner:1.4.10'
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    kapt "com.github.bumptech.glide:compiler:4.7.1"
+    implementation "com.github.piasy:BigImageViewer:1.4.6"
+    //    implementation "jp.wasabeef:glide-transformations:3.3.0"
+
+    //rx
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.12'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+
+    //network
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation "com.squareup.retrofit2:retrofit:${dependVersion.retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${dependVersion.retrofit}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${dependVersion.retrofit}"
+    implementation "com.squareup.okhttp3:okhttp:${dependVersion.okhttp}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${dependVersion.okhttp}"
+
+    //di
+    implementation "com.google.dagger:dagger:${dependVersion.dagger2}"
+    kapt "com.google.dagger:dagger-compiler:${dependVersion.dagger2}"
+    implementation "com.jakewharton:butterknife:${dependVersion.butterknife}"
+    kapt "com.jakewharton:butterknife-compiler:${dependVersion.butterknife}"
+    implementation "org.greenrobot:eventbus:3.1.1"
+
+    implementation "android.arch.persistence.room:runtime:1.1.0"
+    kapt "android.arch.persistence.room:compiler:1.1.0"
+
+
+    //other
+    implementation 'com.orhanobut:logger:2.2.0'
+    implementation 'me.yokeyword:fragmentation:1.3.3'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.2.41'
+    implementation 'androidx.core:core-ktx:0.3'
+}
+repositories {
+    mavenCentral()
+}
+
+static def releaseTime() {
+    return new Date().format("yyyyMMdd_HHmmss", TimeZone.getTimeZone("GMT+08:00"))
+//    return 1
+}
+def getVersionName(){
+    def versionFile = file("${project.rootDir}/version.properties")
+    if (versionFile.canRead()){
+        Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionFile))
+        def versionName = versionProps['VERSION_NAME'].toString()
+        return versionName
+    }else {
+        throw new GradleException("Could not find version.properties!")
+    }
+}
+def getVersionCode() {
+    def versionFile = file("${project.rootDir}/version.properties")
+    if (versionFile.canRead()) {
+        Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionFile))
+        def versionCode = versionProps['VERSION_CODE'].toInteger()
+        def runTasks = gradle.startParameter.taskNames
+        if ('resguardRelease' in runTasks) {
+            versionProps['VERSION_CODE'] = (++versionCode).toString()
+            versionProps.store(versionFile.newWriter(), null)
+        }
+        return versionCode
+    } else {
+        throw new GradleException("Could not find version.properties!")
+    }
+}

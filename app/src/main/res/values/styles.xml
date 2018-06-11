@@ -1,0 +1,109 @@
+<resources>
+
+    <style name="AppTheme.Night" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="colorPrimary">@color/colorMain_Night</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="colorAccent">@color/colorMain_Night</item>
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="titleTextColor">@android:color/white</item>
+        <item name="colorCardBackground">@color/colorCardBackground_Night</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="background">@color/colorBackground_Night</item>
+        <item name="colorBackground">@color/colorBackground_Night</item>
+        <item name="colorTextHot">@color/colorTextHot_Night</item>
+        <item name="colorTextTitle">@color/colorTextTitle_Night</item>
+        <item name="colorTextTitleClick">@color/colorTextTitleClick_Night</item>
+        <item name="colorSelectBackground">@color/colorSelectBackground_Night</item>
+        <item name="colorUnselectBackground">@color/colorUnselectBackground_Night</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:listDivider">@color/listDividerColor</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+        <item name="colorMenuTitle">@color/colorTextTitleClick_Night</item>
+        <item name="colorNavigation">@color/color_navigation_night</item>
+    </style>
+
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="colorPrimary">@color/colorMain</item>
+        <item name="colorAccent">@color/colorMain</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="titleTextColor">@android:color/white</item>
+        <item name="colorCardBackground">@color/colorCardBackground</item>
+        <item name="background">@color/colorBackground</item>
+        <item name="colorBackground">@color/colorBackground</item>
+        <item name="colorTextHot">@color/colorTextHot</item>
+        <item name="colorTextTitle">@color/colorTextTitle</item>
+        <item name="colorTextTitleClick">@color/colorTextTitleClick</item>
+        <item name="colorSelectBackground">@color/colorSelectBackground</item>
+        <item name="colorUnselectBackground">@color/colorUnselectBackground</item>
+        <item name="android:listDivider">@color/listDividerColor</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+        <item name="colorMenuTitle">@color/colorMain</item>
+        <item name="colorNavigation">@color/color_navigation</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="PhotoTheme" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/animation_translucent_translate</item>
+    </style>
+
+    <style name="animation_translucent_translate" parent="@android:style/Animation.Translucent">
+        <item name="android:windowEnterAnimation">@null</item>
+        <item name="android:windowExitAnimation">@null</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="Settings_Item_Text">
+        <item name="android:textColor">?attr/colorTextTitle</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
+
+    <style name="Settings_Item_SubText">
+        <item name="android:textColor">?attr/colorTextTitleClick</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
+
+    <style name="Settings_Item_CheckBox">
+        <item name="android:checkable">false</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="Settings_Header">
+        <item name="android:textColor">?attr/colorMenuTitle</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Settings_Item_Divider">
+        <item name="android:background">@color/listDividerColor</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+</resources>

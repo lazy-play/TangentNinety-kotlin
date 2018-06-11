@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorMain">#01a2ed</color>
+    <color name="colorBackground">#f3f3f3</color>
+    <color name="colorCardBackground">#ffffff</color>
+    <color name="colorTextHot">#6f6f6f</color>
+    <color name="colorTextTitle">#000000</color>
+    <color name="colorTextTitleClick">#777777</color>
+    <color name="colorSelectBackground">#f0f0f0</color>
+    <color name="colorUnselectBackground">#ffffff</color>
+
+    <!--<color name="colorMain_Night">#222222</color>-->
+    <!--<color name="colorBackground_Night">#343434</color>-->
+    <color name="colorMain_Night">#343434</color>
+    <color name="colorBackground_Night">#222222</color>
+    <color name="colorCardBackground_Night">#303030</color>
+    <color name="colorTextHot_Night">#bebebe</color>
+    <color name="colorTextTitle_Night">#ffffff</color>
+    <color name="colorTextTitleClick_Night">#888888</color>
+    <color name="colorSelectBackground_Night">#2c2c2c</color>
+    <color name="colorUnselectBackground_Night">#343434</color>
+
+    <color name="listDividerColor">#6999</color>
+    <color name="centerGrayColor">#7F7F7F</color>
+    <color name="tabUnselect">#8fff</color>
+    <color name="colorFilter">#44000000</color>
+</resources>
